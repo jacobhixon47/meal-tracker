@@ -1,21 +1,17 @@
 $light-grey : #cccccc;
 
-html {
-  background: url(./../img/bg-image.jpg);
-
-}
 
 .meal-item, .edit-meal {
   background-color: $light-grey;
   padding: 20px;
   margin-bottom: 5px;
-  border-radius: 100px;
+  border-radius: 85px;
   text-align: center;
 }
 
 .meal-name {
   background-color: #fff;
-  border-radius: 100px;
+  border-radius: 85px;
   padding: 20px;
 }
 
@@ -32,4 +28,12 @@ html {
     position: static;
     margin-right: 0px;
   }
+}
+
+html {
+  background: url('https://wallpaperscraft.com/image/steak_vegetables_rolls_dinner_delicious_71438_3840x2400.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

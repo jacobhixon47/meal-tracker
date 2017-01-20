@@ -8,6 +8,7 @@ import { Meal } from './meal.model';
       <div class='row'>
         <meal-list [childMealList]="masterMealList" (editSender)="editMeal($event)"></meal-list>
         <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
+        <new-meal></new-meal>
       </div>
     </div>
   `
