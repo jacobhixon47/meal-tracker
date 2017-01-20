@@ -4,9 +4,17 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
+
+
+    <select>
+      <option value="allMeals">All Meals</option>
+      <option value="over500Meals">Over 500 Calories</option>
+      <option value="under500Meals" selected="selected">Under 500 Calories</option>
+    </select>
+
     <div class="col s12 m6 l6">
       <ul id="meal-list">
-        <li *ngFor="let currentMeal of childMealList" class="meal-item">
+        <li *ngFor="let currentMeal of childMealList | caloriesAmount" class="meal-item">
           <h2 class="meal-name">{{currentMeal.name}}</h2>
           <h3>{{currentMeal.details}}</h3>
           <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>

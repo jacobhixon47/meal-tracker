@@ -15,24 +15,33 @@ $light-grey : #cccccc;
   padding: 20px;
 }
 
-.edit-meal, .new-meal {
+.edit-meal {
   margin-top: 15px;
+  left: 0px;
+  float: left;
+  position: fixed;
+  width: 29%;
 }
 //
-// .new-meal {
-//   position: fixed;
-//   margin-top: 15px;
-//   float: right;
-//   margin-right: 150px;
-// }
-//
-// @media (max-width: 600px) {
-//   .edit-meal {
-//     float: none;
-//     position: static;
-//     margin-right: 0px;
-//   }
-// }
+.new-meal {
+  float: right;
+  margin-top: 15px;
+  position: fixed;
+  margin-right: 0px;
+}
+
+@media (max-width: 600px) {
+  .edit-meal {
+    float: none;
+    position: static;
+    margin-right: 0px;
+    width: 100%;
+  }
+}
+
+.btn {
+  border-radius: 85px;
+}
 
 html {
   background: url('https://wallpaperscraft.com/image/steak_vegetables_rolls_dinner_delicious_71438_3840x2400.jpg');
