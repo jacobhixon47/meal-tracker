@@ -6,13 +6,13 @@ import { Meal } from './meal.model';
   template: `
       <div *ngIf="childSelectedMeal" class="edit-meal">
         <h4>Edit Meal</h4>
-        <label>Enter Meal Title</label>
-        <input [(ngModel)]="childSelectedMeal.name">
-        <label>Enter Calories</label>
-        <input [(ngModel)]="childSelectedMeal.calories" type="number">
-        <label>Enter Details/Notes</label>
-        <input [(ngModel)]="childSelectedMeal.details">
-        <button (click)="doneEditingClicked()" class="btn">Done</button>
+        <label>Enter Meal Title</label><br>
+        <input [(ngModel)]="childSelectedMeal.name"><br>
+        <label>Enter Calories</label><br>
+        <input [(ngModel)]="childSelectedMeal.calories" type="number"><br>
+        <label>Enter Details/Notes</label><br>
+        <input [(ngModel)]="childSelectedMeal.details"><br>
+        <button (click)="doneEditingClicked()" class="btn btn-success">Done</button>
       </div>
     `
 })

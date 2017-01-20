@@ -12,6 +12,7 @@ $under500 : #71cefc;
 
 #meal-list {
   text-align: center;
+  list-style: none;
 }
 
 .meal-name {
@@ -21,23 +22,21 @@ $under500 : #71cefc;
 
 .edit-meal {
   margin-top: 15px;
-  left: 0px;
-  position: fixed;
-  width: 45%;
+  width: 93%;
+  margin-left: 6%;
 }
 //
 .new-meal {
   margin-top: 15px;
-  position: fixed;
-  margin-right: 0px;
-  width: 45%;
+  width: 93%;
+  margin-left: 6%;
 }
 
 .btn {
   border-radius: 85px;
 }
 
-html {
+body {
   background: url('https://wallpaperscraft.com/image/steak_vegetables_rolls_dinner_delicious_71438_3840x2400.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
@@ -51,4 +50,9 @@ html {
 
 .under500 {
   background-color: $under500;
+}
+
+.title-row {
+  background-color: $light-grey;
+  text-align: center;
 }

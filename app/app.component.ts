@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'app-root',
   template: `
     <div class='container'>
-      <div class='row'>
+      <div class='row title-row'>
         <h1>Meal-Tracker</h1>
       </div>
       <div class='row'>

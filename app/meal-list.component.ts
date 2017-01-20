@@ -5,16 +5,16 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
     <ul id="meal-list">
-      <select>
+      <select (change)="onChange($event.target.value)">
         <option value="allMeals">All Meals</option>
-        <option value="over500Meals">Over 500 Calories</option>
-        <option value="under500Meals" selected="selected">Under 500 Calories</option>
+        <option value="over500Meals" selected="selected">Over 500 Calories</option>
+        <option value="under500Meals">Under 500 Calories</option>
       </select>
-      <li *ngFor="let currentMeal of childMealList | caloriesAmount" class="meal-item">
+      <li *ngFor="let currentMeal of childMealList | calories:filterByCalories" class="meal-item">
         <h2 [class]="caloriesColor(currentMeal)">{{currentMeal.name}}</h2>
         <h3>{{currentMeal.details}}</h3>
         <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>
-        <button (click)="editClicked(currentMeal)" class="btn">Edit</button>
+        <button (click)="editClicked(currentMeal)" class="btn btn-info">Edit</button>
       </li>
     </ul>
   `
@@ -23,6 +23,8 @@ import { Meal } from './meal.model';
 export class MealListComponent {
   @Input() childMealList: Meal[];
   @Output() editSender = new EventEmitter();
+
+  filterByCalories: string = "over500Meals";
 
   caloriesColor(currentMeal) {
     if (currentMeal.calories <= 500) {
@@ -34,5 +36,9 @@ export class MealListComponent {
 
   editClicked(meal: Meal) {
     this.editSender.emit(meal);
+  }
+
+  onChange(optionFromSelect) {
+    this.filterByCalories = optionFromSelect;
   }
 }
