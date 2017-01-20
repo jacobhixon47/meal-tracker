@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   template: `
     <div class='container'>
       <div class='row'>
-        <meal-list></meal-list>
+        <meal-list [childMealList]="masterMealList"></meal-list>
       </div>
     </div>
   `
@@ -14,9 +14,10 @@ import { Meal } from './meal.model';
 
 export class AppComponent {
   masterMealList: Meal[] = [
-    new Meal('Cheeseburger', 250, 'lettuce, tomato, cheese'),
+    new Meal('Cheeseburger', 600, 'lettuce, tomato, cheese'),
     new Meal('Loaded Fries', 300, 'bacon bits, cheese, ranch'),
     new Meal('Smoothie', 40, 'strawberries and bananas'),
+    new Meal('Donuts', 750, '4 donuts'),
   ];
 
   selectedMeal: Meal = null;
