@@ -4,7 +4,6 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'edit-meal',
   template: `
-    <div class="col s12 m3 l3 edit-column">
       <div *ngIf="childSelectedMeal" class="edit-meal">
         <h4>Edit Meal</h4>
         <label>Enter Meal Title</label>
@@ -13,9 +12,8 @@ import { Meal } from './meal.model';
         <input [(ngModel)]="childSelectedMeal.calories" type="number">
         <label>Enter Details/Notes</label>
         <input [(ngModel)]="childSelectedMeal.details">
-        <a (click)="doneEditingClicked()" class="btn green waves-effect waves-green">Done</a>
+        <button (click)="doneEditingClicked()" class="btn">Done</button>
       </div>
-    </div>
     `
 })
 

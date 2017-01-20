@@ -6,6 +6,7 @@ import { MealListComponent } from './meal-list.component';
 import { EditMealComponent } from './edit-meal.component';
 import { NewMealComponent } from './new-meal.component';
 import { CaloriesPipe } from './calories.pipe';
+// import { MaterializeDirective } from "angular2-materialize";
 
 @NgModule({
   imports: [BrowserModule,

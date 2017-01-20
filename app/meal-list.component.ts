@@ -4,24 +4,19 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
-
-
-    <select>
-      <option value="allMeals">All Meals</option>
-      <option value="over500Meals">Over 500 Calories</option>
-      <option value="under500Meals" selected="selected">Under 500 Calories</option>
-    </select>
-
-    <div class="col s12 m6 l6">
-      <ul id="meal-list">
-        <li *ngFor="let currentMeal of childMealList | caloriesAmount" class="meal-item">
-          <h2 class="meal-name">{{currentMeal.name}}</h2>
-          <h3>{{currentMeal.details}}</h3>
-          <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>
-          <a (click)="editClicked(currentMeal)" class="btn waves-effect waves-light">Edit</a>
-        </li>
-      </ul>
-    </div>
+    <ul id="meal-list">
+      <select>
+        <option value="allMeals">All Meals</option>
+        <option value="over500Meals">Over 500 Calories</option>
+        <option value="under500Meals" selected="selected">Under 500 Calories</option>
+      </select>
+      <li *ngFor="let currentMeal of childMealList | caloriesAmount" class="meal-item">
+        <h2 [class]="caloriesColor(currentMeal)">{{currentMeal.name}}</h2>
+        <h3>{{currentMeal.details}}</h3>
+        <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>
+        <button (click)="editClicked(currentMeal)" class="btn">Edit</button>
+      </li>
+    </ul>
   `
 })
 
@@ -31,9 +26,9 @@ export class MealListComponent {
 
   caloriesColor(currentMeal) {
     if (currentMeal.calories <= 500) {
-      return 'teal accent-4 z-depth-2';
+      return 'under500 meal-name';
     } else if (currentMeal.calories >= 500) {
-      return 'amber accent-4 z-depth-2';
+      return 'over500 meal-name';
     }
   }
 

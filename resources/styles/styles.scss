@@ -1,5 +1,6 @@
 $light-grey : #cccccc;
-
+$over500 : #dcfc71;
+$under500 : #71cefc;
 
 .meal-item, .edit-meal, .new-meal {
   background-color: $light-grey;
@@ -9,8 +10,11 @@ $light-grey : #cccccc;
   text-align: center;
 }
 
+#meal-list {
+  text-align: center;
+}
+
 .meal-name {
-  background-color: #fff;
   border-radius: 85px;
   padding: 20px;
 }
@@ -18,25 +22,15 @@ $light-grey : #cccccc;
 .edit-meal {
   margin-top: 15px;
   left: 0px;
-  float: left;
   position: fixed;
-  width: 29%;
+  width: 45%;
 }
 //
 .new-meal {
-  float: right;
   margin-top: 15px;
   position: fixed;
   margin-right: 0px;
-}
-
-@media (max-width: 600px) {
-  .edit-meal {
-    float: none;
-    position: static;
-    margin-right: 0px;
-    width: 100%;
-  }
+  width: 45%;
 }
 
 .btn {
@@ -49,4 +43,12 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.over500 {
+  background-color: $over500;
+}
+
+.under500 {
+  background-color: $under500;
 }
