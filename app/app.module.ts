@@ -5,8 +5,9 @@ import { MealListComponent } from './meal-list.component';
 
 @NgModule({
   imports: [BrowserModule] ,
-  declarations: [AppComponent, 
-                  MealListComponent],
+  declarations: [AppComponent,
+                  MealListComponent,
+                  EditMealComponent],
   bootstrap:    [AppComponent]
 })
 

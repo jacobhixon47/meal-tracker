@@ -4,10 +4,10 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
-    <div class="col 4">
+    <div class="col s12 m8 l6">
       <ul id="meal-list">
         <li *ngFor="let currentMeal of childMealList" class="meal-item">
-          <h1>{{currentMeal.name}}</h1>
+          <h2 class="meal-name">{{currentMeal.name}}</h2>
           <h3>{{currentMeal.details}}</h3>
           <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>
         </li>
@@ -21,9 +21,9 @@ export class MealListComponent {
 
   caloriesColor(currentMeal) {
     if (currentMeal.calories <= 500) {
-      return 'teal accent-4';
+      return 'teal accent-4 z-depth-2';
     } else if (currentMeal.calories >= 500) {
-      return 'amber accent-4';
+      return 'amber accent-4 z-depth-2';
     }
   }
 }
