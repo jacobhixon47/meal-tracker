@@ -10,6 +10,7 @@ import { Meal } from './meal.model';
           <h2 class="meal-name">{{currentMeal.name}}</h2>
           <h3>{{currentMeal.details}}</h3>
           <h4 [class]="caloriesColor(currentMeal)">Calories: {{currentMeal.calories}}</h4>
+          <a (click)="editClicked(currentMeal)" class="btn waves-effect waves-light">Edit</a>
         </li>
       </ul>
     </div>
@@ -18,6 +19,7 @@ import { Meal } from './meal.model';
 
 export class MealListComponent {
   @Input() childMealList: Meal[];
+  @Output() editSender = new EventEmitter();
 
   caloriesColor(currentMeal) {
     if (currentMeal.calories <= 500) {
@@ -25,5 +27,9 @@ export class MealListComponent {
     } else if (currentMeal.calories >= 500) {
       return 'amber accent-4 z-depth-2';
     }
+  }
+
+  editClicked(meal: Meal) {
+    this.editSender.emit(meal);
   }
 }

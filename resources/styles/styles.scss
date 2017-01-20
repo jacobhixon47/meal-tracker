@@ -1,6 +1,11 @@
 $light-grey : #cccccc;
 
-.meal-item {
+html {
+  background: url(./../img/bg-image.jpg);
+
+}
+
+.meal-item, .edit-meal {
   background-color: $light-grey;
   padding: 20px;
   margin-bottom: 5px;
@@ -12,4 +17,19 @@ $light-grey : #cccccc;
   background-color: #fff;
   border-radius: 100px;
   padding: 20px;
+}
+
+.edit-meal {
+  position: fixed;
+  margin-top: 15px;
+  float: right;
+  margin-right: 150px;
+}
+
+@media (max-width: 600px) {
+  .edit-meal {
+    float: none;
+    position: static;
+    margin-right: 0px;
+  }
 }

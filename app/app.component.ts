@@ -6,7 +6,8 @@ import { Meal } from './meal.model';
   template: `
     <div class='container'>
       <div class='row'>
-        <meal-list [childMealList]="masterMealList"></meal-list>
+        <meal-list [childMealList]="masterMealList" (editSender)="editMeal($event)"></meal-list>
+        <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
       </div>
     </div>
   `
@@ -21,4 +22,12 @@ export class AppComponent {
   ];
 
   selectedMeal: Meal = null;
+
+  editMeal(currentMeal) {
+    this.selectedMeal = currentMeal;
+  }
+
+  doneEditing() {
+    this.selectedMeal = null;
+  }
 }
